@@ -3,6 +3,8 @@ package com.atguigu.gulimall.member.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.atguigu.gulimall.member.feign.CouponFeignService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,11 +26,26 @@ import com.atguigu.common.utils.R;
  * @email shotozheng@gmail.com
  * @date 2021-05-16 21:30:52
  */
+@Slf4j
 @RestController
 @RequestMapping("member/member")
 public class MemberController {
     @Autowired
     private MemberService memberService;
+
+    @Autowired
+    private CouponFeignService couponFeignService;
+
+    /**
+     * for test openfeign
+     */
+    @RequestMapping("/coupon/list")
+    public R testOpenFeign(@RequestParam Map<String, Object> params) {
+        log.info("开始调用优惠券服务...");
+        R result = couponFeignService.list(params);
+        log.info("优惠券服务调用结束...");
+        return result;
+    }
 
     /**
      * 列表
