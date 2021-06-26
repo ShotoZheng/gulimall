@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: renren-fast
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: e3a43666-4ad5-4fc4-a260-eb925f08144c
+        group: DEV

@@ -52,6 +52,12 @@ public class AttrEntity implements Serializable {
 	 * 所属分类
 	 */
 	private Long catelogId;
+
+	/**
+	 * 值类型[1 - 允许， 0-不允许]
+	 */
+	private Long valueType;
+
 	/**
 	 * 快速展示【是否展示在介绍上；0-否 1-是】，在sku中仍然可以调整
 	 */

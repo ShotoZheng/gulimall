@@ -1,0 +1,15 @@
+server:
+  port: 12000
+
+spring:
+  application:
+    name: gulimall-third-party
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: f023e5c2-0e17-403b-a5ab-8c212ed83e24
+        group: DEV
+
