@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: gulimall-search
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: fa8c5dd0-82ba-46c6-a8fe-98aea9f605a5
+        group: DEV

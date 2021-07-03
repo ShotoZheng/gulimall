@@ -1,7 +1,5 @@
 package com.atguigu.common.constant;
 
-import lombok.Data;
-
 public class ProductConstant {
 
 

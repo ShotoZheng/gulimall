@@ -35,5 +35,6 @@ public interface AttrService extends IService<AttrEntity> {
 
     void removeAttr(List<Long> asList);
 
+    List<Long> selectSearchAttrIds(List<Long> attrIds);
 }
 
