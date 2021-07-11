@@ -137,7 +137,7 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoDao, SkuInfoEntity> i
             skuItemVo.setImages(images);
         }, executor);
 
-        //等到所有任务都完成
+        //6、等到所有任务都完成
         CompletableFuture.allOf(saleAttrFuture, descFuture, baseAttrFuture, imageFuture).get();
         return skuItemVo;
     }
