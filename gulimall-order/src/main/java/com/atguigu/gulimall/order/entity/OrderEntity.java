@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
+import lombok.ToString;
 
 /**
  * 订单
@@ -15,6 +16,7 @@ import lombok.Data;
  * @email shotozheng@gmail.com
  * @date 2021-05-16 21:59:54
  */
+@ToString
 @Data
 @TableName("oms_order")
 public class OrderEntity implements Serializable {
