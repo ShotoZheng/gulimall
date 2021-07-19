@@ -296,7 +296,7 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
                     esModel.setHasStock(finalStockMap.get(sku.getSkuId()));
                 }
 
-                //TODO 5、热度评分。0
+                //5. 热度评分, 0
                 esModel.setHotScore(0L);
 
                 // 6、查询品牌和分类的名字信息
@@ -323,6 +323,14 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
             //远程调用失败
             //TODO 9、重复调用？接口幂等性；重试机制？xxx
         }
+    }
+
+    @Override
+    public SpuInfoEntity getSpuInfoBySkuId(Long skuId) {
+        SkuInfoEntity byId = skuInfoService.getById(skuId);
+        Long spuId = byId.getSpuId();
+        SpuInfoEntity spuInfoEntity = getById(spuId);
+        return spuInfoEntity;
     }
 
 }
